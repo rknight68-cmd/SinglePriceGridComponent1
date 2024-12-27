@@ -1,0 +1,154 @@
+:root {
+  --clr-primary-cyan: hsl(179, 62%, 43%);
+  --clr-primary-yellow: hsl(71, 73%, 54%);
+  --clr-neutral-lt-gray: hsl(204, 43%, 93%);
+  --clr-neutral-gray-blue: hsl(218, 22%, 67%);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--clr-neutral-lt-gray);
+  font-family: 'Karla', sans-serif;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+#main-container {
+  width: 100%px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr 375px 1fr;
+  grid-template-areas:
+    '. a .'
+    '. b .'
+    '. c .';
+}
+
+#top-section {
+  grid-area: a;
+  width: 100%;
+  height: 316px;
+  background: white;
+}
+
+#top-section>h2 {
+  color: var(--clr-primary-cyan);
+  font-size: 1.2rem;
+}
+
+#top-section>h3 {
+  color: var(--clr-primary-yellow);
+  margin: 30px 0 20px 0;
+  font-size: .9rem;
+}
+
+#top-section>p {
+  font-size: .8rem;
+  line-height: 2;
+  color: var(--clr-neutral-gray-blue);
+}
+
+#bot-left-section {
+  grid-area: b;
+  width: 100%;
+  height: 275px;
+  background: var(--clr-primary-cyan);
+}
+
+#bot-left-section>p {
+  font-weight: 400;
+  font-size: .9rem;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+}
+
+.sub-container {
+  display: flex;
+  align-items: baseline;
+}
+
+.price {
+  margin-top: 25px;
+  font-size: 1.75rem;
+}
+
+.per-month {
+  position: relative;
+  top: -7px;
+  left: 12px;
+  color: var(--clr-neutral-lt-gray);
+  opacity: .5;
+  font-weight: 400;
+}
+
+.btn {
+  background: var(--clr-primary-yellow);
+  width: 310px;
+  height: 60px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 3px 3px 20px 0px #888787;
+}
+
+.btn:hover {
+  background: hsla(71, 73%, 45%);
+  cursor: pointer;
+  transition: .5s ease;
+  transform: scale(1.02);
+}
+
+#bot-right-section {
+  grid-area: c;
+  width: 100%;
+  height: 275px;
+  background: hsla(179, 62%, 43%, 0.8);
+}
+
+#bot-right-section>ul {
+  list-style: none;
+  margin-top: 15px;
+}
+
+#bot-right-section>ul>li {
+  color: var(--clr-neutral-lt-gray);
+  font-size: .8rem;
+  line-height: 1.5;
+
+}
+
+.sub-heading {
+  font-size: 1rem;
+
+}
+
+.f-white {
+  color: white;
+}
+
+.p-30 {
+  padding: 30px;
+}
+
+@media (min-width: 768px) {
+  #main-container {
+    grid-template-columns: 1fr repeat(2, 376px) 1fr;
+    grid-template-areas:
+      '. a a .'
+      '. b c .';
+  }
+
+  #top-section {
+    height: 240px;
+  }
+
+}
